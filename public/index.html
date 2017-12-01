@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   </head>
   <body>
     <div id="display-screen">
@@ -16,7 +17,7 @@
 
     <!-- This screen appears when a player clicks "JOIN" on the Title Screen -->
     <template id="join-game-template">
-      <div id="back"></div>
+      <div class="back"></div>
       <div id="login-three"></div>
         <div class="joinGameWrapper">
           <img src="/icon-large.png" alt="Le logo d'Emile" width="64px" height="64px" style="margin-top: 15px;">
@@ -33,6 +34,7 @@
 
             <div class="info buttons">
                 <button id="btnStart" class="btn"><strong>Start</strong></button>
+                <button id="btnResume" class="btn"><strong>Resume</strong></button>
                 <div id="playerWaitingMessage"></div>
             </div>
         </div>
@@ -41,19 +43,16 @@
 
     <!-- This screen appears when the game starts -->
     <template id="play-game-template">
-      <div id="back"></div>
+      <div class="back"></div>
       <h1>This is the page where you can roll the dice</h1>
       <div id="set">
       <div id="play-three"></div>
         <button id="btnRoll">Roll the dice!</button>
         <button id="btnGetResults">Get results!</button>
-        <div id="chat-window"> <!-- kinda redondant with #results but for the
-          moment didn't have the time to tidy it -->
         <div id="results">
           <div id="results-player-one"></div>
           <div id="results-player-two"></div>
         </div>
-      </div>
       </div>
       <script src="/play-screen.js"></script>
     </template>
